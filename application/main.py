@@ -4,7 +4,7 @@ from testing import *
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/') 
 def hello():
-    print('test print')
-    return foo()
+    item = Clothing(1, "tank top")
+    return item.type
