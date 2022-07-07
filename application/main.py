@@ -1,8 +1,10 @@
 from flask import Flask, render_template
+from testing import *
 
 app = Flask(__name__)
 
 
 @app.route('/')
 def hello():
-    return 'Hello, World!'  
+    print('test print')
+    return foo()
