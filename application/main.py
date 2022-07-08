@@ -6,5 +6,4 @@ app = Flask(__name__)
 
 @app.route('/') 
 def hello():
-    item = Clothing(1, "tank top")
-    return item.type
+    return render_template('home.html')
