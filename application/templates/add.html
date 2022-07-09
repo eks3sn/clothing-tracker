@@ -50,29 +50,20 @@
     <!---Page Content-->
     <header class="page-header header container-fluid">
         <div class="description">
-            <h1>All Clothes</h1>
-            <table>
-                <thead>
-                   <tr>
-                      <th>Type</th>
-                      <th>Color</th>
-                      <th>Brand</th>
-                      <th>Wears</th>
-                   </tr>
-                </thead>
-                
-                <tbody>
-                   {% for Clothes in clothes %}
-                      <tr>
-                         <td>{{ clothes.type }}</td>
-                         <td>{{ clothes.color }}</td>
-                         <td>{{ clothes.brand }}</td>
-                         <td>{{ clothes.wears }}</td>
-                      </tr>
-                   {% endfor %}
-                </tbody>
-             </table>
+            <h1>Add Clothes</h1>
         </div>
+
+        <form action = "{{ request.path }}" method = "post">
+           <label for = "category">Category</label><br>
+           <input type = "text" name = "category" placeholder = "Category" /><br>
+           <label for = "type">Type</label><br>
+           <input type = "text" name = "type" placeholder = "Type" /><br>
+           <label for = "brand">Brand</label><br>
+           <input type = "text" name = "brand" placeholder = "Brand" /><br>
+           <label for = "color">Color</label><br>
+           <input type = "text" name = "color" placeholder = "Color" /><br>          
+           <input type = "submit" value = "Submit" />
+        </form>
 
     </header>
 
