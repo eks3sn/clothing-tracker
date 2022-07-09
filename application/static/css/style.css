@@ -1,6 +1,48 @@
-h1 {
-    border: 2px #eee solid;
-    color: blue;
-    text-align: center;
-    padding: 10px;
+body {
+  padding: 0;
+  margin: 0;
+  background: #ffffff;
+}
+.navbar {
+  background:#557d83;
+}
+.nav-link,
+.navbar-brand {
+  color: rgb(233, 233, 233);
+  cursor: pointer;
+}
+.nav-link {
+  margin-right: 1em !important;
+}
+.nav-link:hover {
+  color: #000;
+}
+.navbar-collapse {
+  justify-content: flex-end;
+}
+.description {
+	left: 50%;
+	position: absolute;
+	top: 45%;
+	transform: translate(-50%, -55%);
+	text-align: center;
+}
+.description h1 {
+	color: #3a575b;
+}
+.description p {
+	color: rgb(100, 100, 100);
+	font-size: 1.3rem;
+	line-height: 1.5;
+}
+.description button {
+  border:1px solid #ffffff;
+  background:#ebdc87;
+  border-radius: 0;
+  color:#fff;
+}
+.description button:hover {
+border:1px solid #fff;
+  background:#fff;
+  color:#000;
 }
