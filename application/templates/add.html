@@ -36,7 +36,7 @@
               Actions
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Enter an item</a>
+              <a class="dropdown-item" href="/add">Enter an item</a>
               <a class="dropdown-item" href="#">Enter a wear</a>
             </div>
           </li>
@@ -48,12 +48,11 @@
     </nav>
 
     <!---Page Content-->
-    <header class="page-header header container-fluid">
-        <div class="description">
-            <h1>Add Clothes</h1>
-        </div>
 
-        <form action = "{{ request.path }}" method = "post">
+
+    <div class="text-center" style="padding-top:40px"><h3>Add an item!</h3>
+            
+        <form action = "{{ request.path }}" method = "post" style="text-align: center">
            <label for = "category">Category</label><br>
            <input type = "text" name = "category" placeholder = "Category" /><br>
            <label for = "type">Type</label><br>
@@ -65,9 +64,8 @@
            <input type = "submit" value = "Submit" />
         </form>
 
-    </header>
+    </div>
 
-  
 
 
     <!-- Optional JavaScript -->

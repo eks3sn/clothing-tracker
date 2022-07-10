@@ -36,7 +36,7 @@
               Actions
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Enter an item</a>
+              <a class="dropdown-item" href="/add">Enter an item</a>
               <a class="dropdown-item" href="#">Enter a wear</a>
             </div>
           </li>
@@ -48,9 +48,11 @@
     </nav>
 
     <!---Page Content-->
+    <div class style="padding-top:40px"></div>
     <header class="page-header header container-fluid">
         <div class="description">
             <h1>All Clothes</h1>
+
             <table>
                 <thead>
                    <tr>
@@ -62,17 +64,18 @@
                 </thead>
                 
                 <tbody>
-                   {% for Clothes in clothes %}
+                   {% for Clothes in my_list %}
                       <tr>
-                         <td>{{ clothes.type }}</td>
-                         <td>{{ clothes.color }}</td>
-                         <td>{{ clothes.brand }}</td>
-                         <td>{{ clothes.wears }}</td>
+                         <td>{{ Clothes.type }}</td>
+                         <td>{{ Clothes.color }}</td>
+                         <td>{{ Clothes.brand }}</td>
+                         <td>{{ Clothes.wears }}</td>
                       </tr>
                    {% endfor %}
                 </tbody>
-             </table>
+             </table> 
         </div>
+    </div>
 
     </header>
 

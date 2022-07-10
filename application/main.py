@@ -10,7 +10,7 @@ from flask_migrate import Migrate
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
 db = SQLAlchemy(app)
-app.config['SECRET_KEY'] = 'your secret key'
+app.config['SECRET_KEY'] = 'jd is crow king'
 migrate = Migrate(app, db)
 
 
@@ -37,7 +37,7 @@ def hello():
 
 @app.route('/closet/all') 
 def all():
-    return render_template('all.html', clothes = Clothes.query.all())
+    return render_template('all.html', my_list = Clothes.query.all())
 
 
 @app.route('/add', methods = ['GET', 'POST'])
