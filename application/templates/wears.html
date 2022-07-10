@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -48,38 +49,19 @@
     </nav>
 
     <!---Page Content-->
-    <div class style="padding-top:100px"></div>
-    <header class="page-header header container-fluid">
-        <div class="description">
-            <h3>All Clothes</h3>
 
-            <table>
-                <thead>
-                   <tr>
-                      <th>Type</th>
-                      <th>Color</th>
-                      <th>Brand</th>
-                      <th>Wears</th>
-                   </tr>
-                </thead>
-                
-                <tbody>
-                   {% for Clothes in my_list %}
-                      <tr>
-                         <td>{{ Clothes.type }}</td>
-                         <td>{{ Clothes.color }}</td>
-                         <td>{{ Clothes.brand }}</td>
-                         <td>{{ Clothes.wears }}</td>
-                      </tr>
-                   {% endfor %}
-                </tbody>
-             </table> 
-        </div>
-        </div>
 
-    </header>
+    <div class="text-center" style="padding-top:40px"><h3>Enter items you wore today.</h3>
+        <form method="POST">
+            {{ form.crsf_token }}
+            {{ form.category }}
+            {{ form.type }}
+            {{ form.brand }}
+            {{ form.color }}
+            <input type="submit">
+        </form>
+    </div>
 
-  
 
 
     <!-- Optional JavaScript -->

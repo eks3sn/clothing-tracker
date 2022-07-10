@@ -1,3 +1,5 @@
+from tkinter.tix import Select
+from unicodedata import category
 from xxlimited import new
 from flask import Flask, render_template, request, flash, url_for, redirect
 from testing import *
@@ -6,6 +8,8 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import datetime
 from flask_migrate import Migrate
+from flask_wtf import FlaskForm
+from wtforms import SelectField
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
@@ -54,3 +58,23 @@ def add():
          flash('Record was successfully added')
          return redirect(url_for('all'))
     return render_template('add.html')
+
+
+class enter_wears_form(FlaskForm):
+    category = SelectField('category', choices =[('Top','Top'),('Bottom','Bottom'),('Gym','Gym'),('Outerwear','Outerwear')])
+    type = SelectField('type',choices=[])
+    brand = SelectField('brand',choices=[])
+    color = SelectField('color',choices=[])
+
+
+@app.route('/wears', methods = ['GET', 'POST'])
+def enter_wears():
+    form = enter_wears_form()
+    form.type.choices = [(Clothes.id, Clothes.type)for Clothes in Clothes.query.filter_by
+                                    (category='top').all()]
+    form.brand.choices = [(Clothes.id, Clothes.brand)for Clothes in Clothes.query.filter_by
+                                    (category='top',type='tank top',).all()]
+    form.color.choices = [(Clothes.id, Clothes.color)for Clothes in Clothes.query.filter_by
+                                    (category='top',type='tank top',brand='aritzia').all()]
+
+    return render_template('wears.html', form=form)
